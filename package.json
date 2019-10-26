@@ -1,5 +1,5 @@
 {
-  "name": "watermark-generator",
+  "name": "webpage-watermark",
   "version": "1.0.0",
   "description": "a watermark for web application",
   "main": "lib/index.js",
