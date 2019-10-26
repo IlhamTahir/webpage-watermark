@@ -1,5 +1,5 @@
 {
-  "name": "watermark",
+  "name": "watermark-generator",
   "version": "1.0.0",
   "description": "a watermark for web application",
   "main": "lib/index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ilham Tahir",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-google": "^0.14.0"
