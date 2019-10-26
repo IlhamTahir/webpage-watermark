@@ -1,14 +1,18 @@
 {
   "name": "webpage-watermark",
   "version": "1.0.0",
-  "description": "a watermark for web application",
+  "description": "a watermark for web page",
   "main": "lib/index.js",
   "scripts": {
+    "build": "babel src -d lib",
+    "build:watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ilham Tahir",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "eslint": "^6.6.0",
     "eslint-config-google": "^0.14.0"
   }
