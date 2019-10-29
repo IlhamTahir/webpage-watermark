@@ -6,12 +6,12 @@ module.exports =  class Watermark {
                 fontVariant: 'normal',
                 fontWeight: 'normal',
                 fontSize: '14px',
-                color: '#000',
+                color: '#c1c1c1',
                 id: 'watermark',
                 text: 'Watermark',
                 density: 100,
                 clarity: 2,
-                zIndex: -1,
+                zIndex: 1,
                 supportTip: '您的浏览器不支持Canvas'
             }, params);
             this._init();
