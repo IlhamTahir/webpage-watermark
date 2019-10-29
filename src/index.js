@@ -6,7 +6,7 @@ module.exports =  class Watermark {
                 fontVariant: 'normal',
                 fontWeight: 'normal',
                 fontSize: '14px',
-                color: '#f1f1f1',
+                color: '#000',
                 id: 'watermark',
                 text: 'Watermark',
                 density: 100,
@@ -15,6 +15,21 @@ module.exports =  class Watermark {
                 supportTip: '您的浏览器不支持Canvas'
             }, params);
             this._init();
+            this._intervalometer();
+    }
+
+    resetText(text) {
+        this.params.text = text;
+        this._init();
+    }
+
+    _intervalometer() {
+        let self = this;
+        window.setInterval(function(){
+            if (!document.getElementById(self.params.id + '-canvas')) {
+                self._init();
+            }
+        }, 1000);
     }
 
     _init() {
