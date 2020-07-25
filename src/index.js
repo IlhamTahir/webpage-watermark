@@ -27,7 +27,7 @@
                 supportTip: '您的浏览器不支持Canvas'
             }, params);
             this._init();
-            this._intervalometer();
+            this._setAntiDeletion();
         }
 
         resetText(text) {
@@ -35,7 +35,7 @@
             this._init();
         }
 
-        _intervalometer() {
+        _setAntiDeletion() {
             let self = this;
             window.setInterval(function(){
                 if (!document.getElementById(self.params.id + '-canvas')) {
