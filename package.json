@@ -1,13 +1,16 @@
 {
   "name": "webpage-watermark",
   "version": "1.2.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/my-lib.js",
   "description": "a watermark for web page",
-  "main": "lib/index.js",
+  "main": "./dist/webpage-watermark.umd.cjs",
   "scripts": {
-    "build": "babel src -d lib",
-    "build:watch": "babel src -d lib --watch",
-    "lint": "eslint --fix src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build"
   },
   "author": "Ilham Tahir",
   "license": "MIT",
@@ -15,9 +18,10 @@
     "url": "https://github.com/IlhamTahir/webpage-watermark"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-minify": "^0.5.1",
-    "eslint": "^6.8.0"
+    "@types/node": "^18.11.9",
+    "@vitejs/plugin-legacy": "^2.3.1",
+    "terser": "^5.15.1",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.3"
   }
 }

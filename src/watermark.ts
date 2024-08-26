@@ -29,36 +29,37 @@ const defaultConfig: WatermarkConfig = {
     duration: 1000,
     supportTip: '您的浏览器不支持Canvas'
 }
+
 class Watermark {
 
     private watermarkConfig: WatermarkConfig;
 
-    constructor(watermarkConfig:WatermarkConfig){
+    constructor(watermarkConfig: WatermarkConfig){
         this.watermarkConfig = Object.assign(defaultConfig, watermarkConfig);
-        this._init();
+        this.init();
         this._setAntiDeletion();
     }
 
     resetText(text: string) {
         this.watermarkConfig.text = text;
-        this._init();
+        this.init();
     }
 
     _setAntiDeletion() {
         let self = this;
         window.setInterval(function(){
             if (!document.getElementById(self.watermarkConfig.id + '-canvas')) {
-                self._init();
+                self.init();
             }
         }, this.watermarkConfig.duration);
     }
 
-    _init() {
-        this._createCanvas();
-        this._fill();
+    init() {
+        this.createCanvas();
+        this.fill();
     }
 
-    _createCanvas() {
+    private createCanvas() {
         let containerNode: HTMLElement | null = document.getElementById(this.watermarkConfig.id);
         if (!containerNode) {
             this.watermarkConfig.supportTip = '无法定位水印节点';
@@ -77,7 +78,7 @@ class Watermark {
         containerNode.appendChild(canvas);
     }
 
-    _fill() {
+    private fill() {
         let reDunDance = 10;
         // @ts-ignore
         let canvas: HTMLCanvasElement | null = document.getElementById(this.watermarkConfig.id + '-canvas');
@@ -109,3 +110,4 @@ class Watermark {
         }
     }
 }
+
